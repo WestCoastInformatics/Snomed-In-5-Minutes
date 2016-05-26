@@ -32,6 +32,14 @@ The base URL, SNOMED CT edition, and version are hardcoded into the
 client. To point to a different server, different edition, or different
 version, change these parameters.
 
+To run the java tests, execute the following commands
+```
+git clone https://github.com/WestCoastInformatics/Snomed-In-5-Minutes.git
+cd Snomed-In-5-Minutes
+mvn test
+```
+
+
 Javascript
 ----------
 TBD
