@@ -1,7 +1,7 @@
 /**
  * Copyright 2016 West Coast Informatics, LLC
  */
-package com.wci.umls.server.helpers;
+package org.ihtsdo.tutorial.util;
 
 import java.lang.reflect.Method;
 
@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import org.ihtsdo.tutorial.util.Utility;
 
 /**
- * Automates JUnit testing of equals and hashcode methods.
+ * Automates JUnit testing of XML Serialization.
  */
 public class XmlSerializationTester extends ProxyTester {
 

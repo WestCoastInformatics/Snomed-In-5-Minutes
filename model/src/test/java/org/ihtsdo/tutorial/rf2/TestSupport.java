@@ -4,7 +4,7 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 
 /**
- * Support for integration tests
+ * Support for unit tests
  */
 public class TestSupport {
 

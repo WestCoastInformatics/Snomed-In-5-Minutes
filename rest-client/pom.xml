@@ -11,61 +11,16 @@
   </parent>
 
   <artifactId>snomed-in-5-min-rest-client</artifactId>
-  <name>Java Jersey ReST client for SNOMED API</name>
-  <description>Java Jersey ReST client for SNOMED API.</description>
+  <name>Java Jersey REST client for SNOMED API</name>
+  <description>Java Jersey REST client for SNOMED API.</description>
 
   <!-- Declare Project Dependency Versions -->
   <dependencies>
 
-    <!-- Model interfaces. -->
+    <!-- Model classes -->
     <dependency>
       <groupId>org.ihtsdo.tutorial</groupId>
       <artifactId>snomed-in-5-min-model</artifactId>
-    </dependency>
-
-    <!-- Logger -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-    </dependency>
-    
-    <!-- Required for Jersey and JSON -->
-    <dependency>
-      <groupId>org.glassfish.jersey.core</groupId>
-      <artifactId>jersey-server</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.core</groupId>
-      <artifactId>jersey-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.core</groupId>
-      <artifactId>jersey-common</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.media</groupId>
-      <artifactId>jersey-media-jaxb</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.media</groupId>
-      <artifactId>jersey-media-json-jackson</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.containers</groupId>
-      <artifactId>jersey-container-servlet</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.media</groupId>
-      <artifactId>jersey-media-multipart</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-jaxb-annotations</artifactId>
     </dependency>
 
   </dependencies>

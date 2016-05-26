@@ -8,8 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.ihtsdo.tutorial.rf2.Match;
-import org.ihtsdo.tutorial.rf2.MatchResults;
+import org.ihtsdo.tutorial.util.CopyConstructorTester;
+import org.ihtsdo.tutorial.util.EqualsHashcodeTester;
+import org.ihtsdo.tutorial.util.GetterSetterTester;
+import org.ihtsdo.tutorial.util.ProxyTester;
 import org.ihtsdo.tutorial.util.Utility;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,13 +19,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.wci.umls.server.helpers.CopyConstructorTester;
-import com.wci.umls.server.helpers.EqualsHashcodeTester;
-import com.wci.umls.server.helpers.GetterSetterTester;
-import com.wci.umls.server.helpers.ProxyTester;
-
 /**
- * Unit test for Match.
+ * Unit test for MatchResults.
  */
 public class MatchResultsUnitTest extends TestSupport {
 

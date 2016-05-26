@@ -1,7 +1,7 @@
 /**
  * Copyright 2016 West Coast Informatics, LLC
  */
-package com.wci.umls.server.helpers;
+package org.ihtsdo.tutorial.util;
 
 import java.lang.reflect.Method;
 

@@ -18,7 +18,8 @@ import org.ihtsdo.tutorial.rf2.MatchResults;
 import org.ihtsdo.tutorial.util.Utility;
 
 /**
- * A client for connecting to a content REST service.
+ * A client for connecting to a SNOMED REST service.
+ * NOTE: the URL parameters are hardcoded here.
  */
 public class SnomedClientRest {
 

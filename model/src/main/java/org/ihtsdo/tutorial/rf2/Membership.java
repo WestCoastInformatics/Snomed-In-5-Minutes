@@ -6,7 +6,7 @@ package org.ihtsdo.tutorial.rf2;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Represents a concept reference.
+ * Represents a membership in a refset.
  * 
  * <pre>
  * { type : "SIMPLEMAP",

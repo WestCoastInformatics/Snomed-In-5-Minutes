@@ -25,8 +25,12 @@ Java
 Java examples are available via JUnit tests in
 * rest-client/src/main/test/org/ihtsdo/tutorial/SnomedClientTest.java
 
-These tests make use of the Jersey client endpoint defined in
+These tests make use of the Jersey client endpoint defined in:
 * rest-client/src/main/java/org/ihtsdo/tutorial/SnomedClientRest
+
+The base URL, SNOMED CT edition, and version are hardcoded into the
+client. To point to a different server, different edition, or different
+version, change these parameters.
 
 Javascript
 ----------

@@ -4,17 +4,15 @@ package org.ihtsdo.tutorial.rf2;
 import static org.junit.Assert.assertTrue;
 
 import org.apache.log4j.Logger;
-import org.ihtsdo.tutorial.rf2.Match;
+import org.ihtsdo.tutorial.util.CopyConstructorTester;
+import org.ihtsdo.tutorial.util.EqualsHashcodeTester;
+import org.ihtsdo.tutorial.util.GetterSetterTester;
+import org.ihtsdo.tutorial.util.XmlSerializationTester;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.wci.umls.server.helpers.CopyConstructorTester;
-import com.wci.umls.server.helpers.EqualsHashcodeTester;
-import com.wci.umls.server.helpers.GetterSetterTester;
-import com.wci.umls.server.helpers.XmlSerializationTester;
 
 /**
  * Unit test for Match.

@@ -1,7 +1,7 @@
 /**
  * Copyright 2016 West Coast Informatics, LLC
  */
-package com.wci.umls.server.helpers;
+package org.ihtsdo.tutorial.util;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +21,7 @@ import java.util.TreeSet;
 import org.apache.log4j.Logger;
 
 /**
- * Automates JUnit testing of equals and hashcode methods.
+ * Generates proxy classes for testing.
  */
 public class ProxyTester {
 
