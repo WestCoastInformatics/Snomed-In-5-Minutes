@@ -20,37 +20,37 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Concept extends ConceptRef {
 
   /** The _id. */
-  public String _id;
+  private String _id;
 
   /** The memberships. */
-  public List<Membership> memberships;
+  private List<Membership> memberships;
 
   /** The descriptions. */
-  public List<Description> descriptions;
+  private List<Description> descriptions;
 
   /** The relationships. */
-  public List<Relationship> relationships;
+  private List<Relationship> relationships;
 
   /** The stated relationships. */
-  public List<Relationship> statedRelationships;
+  private List<Relationship> statedRelationships;
 
   /** The is leaf inferred. */
-  public boolean isLeafInferred;
+  private boolean isLeafInferred;
 
   /** The is leaf stated. */
-  public boolean isLeafStated;
+  private boolean isLeafStated;
 
   /** The fsn. */
-  public String fsn;
+  private String fsn;
 
   /** The semtag. */
-  public String semtag;
+  private String semtag;
 
   /** The inferred ancestors. */
-  public List<String> inferredAncestors;
+  private List<String> inferredAncestors;
 
   /** The stated ancestors. */
-  public List<String> statedAncestors;
+  private List<String> statedAncestors;
 
   /**
    * Instantiates an empty {@link Concept}.
@@ -146,7 +146,7 @@ public class Concept extends ConceptRef {
    */
   public List<Relationship> getRelationships() {
     if (relationships == null) {
-      relationships= new ArrayList<>();
+      relationships = new ArrayList<>();
     }
     return relationships;
   }
@@ -261,7 +261,7 @@ public class Concept extends ConceptRef {
    * @return the inferred ancestors
    */
   public List<String> getInferredAncestors() {
-    if (inferredAncestors== null) {
+    if (inferredAncestors == null) {
       inferredAncestors = new ArrayList<>();
     }
     return inferredAncestors;
@@ -282,7 +282,7 @@ public class Concept extends ConceptRef {
    * @return the stated ancestors
    */
   public List<String> getStatedAncestors() {
-    if (statedAncestors== null) {
+    if (statedAncestors == null) {
       statedAncestors = new ArrayList<>();
     }
     return statedAncestors;
