@@ -31,6 +31,77 @@ Acessing SNOMED CT Content
 
 The following examples can be types into the command line of any terminal that has cURL and python configured. It should work by without requiring any installation in Unix/Linx/BSD and Apple OS X systems.
 
+### Searching for a query strings
+
+Searching for "heart attack":
+
+`
+curl --silent "http://browser.ihtsdotools.org/api/snomed/en-edition/v20160131/descriptions?query=heart%20attack&limit=50&searchMode=partialMatching&lang=english&statusFilter=activeOnly&skipTo=0&returnLimit=100&normalize=true" | python -c "import json,sys;obj=json.load(sys.stdin);print obj['details']['total'];"
+`
+
+This command will obtain a json response from the server, parse it, and display the property "total" in the "details", this represents the number of descriptions that match with our search query.
+
+Output:
+
+`
+13
+`
+
+Same API call, but now we display the first match FSN:
+
+` 
+curl --silent "http://browser.ihtsdotools.org/api/snomed/en-edition/v20160131/descriptions?query=heart%20attack&limit=50&searchMode=partialMatching&lang=english&statusFilter=activeOnly&skipTo=0&returnLimit=100&normalize=true" | python -c "import json,sys;obj=json.load(sys.stdin);print obj['matches'][0]['fsn'];"
+`
+
+Output:
+
+`
+Myocardial infarction (disorder)
+`
+
+Searching for the keyword "heart", but only in the "procedure" hierarchy, this is specified in the query parameter `&semanticFilter=procedure`:
+
+`
+curl --silent "http://browser.ihtsdotools.org/api/snomed/en-edition/v20160131/descriptions?query=heart&limit=50&searchMode=partialMatching&lang=english&statusFilter=activeOnly&skipTo=0&returnLimit=100&semanticFilter=procedure&normalize=true" | python -c "import json,sys;obj=json.load(sys.stdin);print obj['details']['total'];"
+`
+
+This command will obtain a json response from the server, parse it, and display the property "total" in the "details", this represents the number of descriptions that match with our search query.
+
+Output:
+
+`
+746
+`
+
+### Searching for a description by descriptionId
+When searching by description id the "matches" property contains only one element, matching the provided identifier:
+
+`
+curl --silent "http://browser.ihtsdotools.org/api/snomed/en-edition/v20160131/descriptions/679406011" | python -c "import json,sys;obj=json.load(sys.stdin);print obj['matches'][0]['term'];"
+`
+
+Output:
+
+`
+Methylphenyltetrahydropyridine (substance)
+`
+
+### Retrieving concept information by conceptId
+
+The API call will retrieve the complete concept information for the provided conceptId.
+
+`
+curl --silent http://browser.ihtsdotools.org/api/snomed/en-edition/v20160131/concepts/109152007 | python -c "import json,sys;obj=json.load(sys.stdin);print obj['fsn'];"
+`
+
+Output:
+
+`
+Bilirubin test kit (substance)
+`
+
+"Bilirubin test kit (substance)" is the Fully Specified Name for this concept, contained in the "fsn" property.
+
 ### Getting full concept details into a local .json file
 
 `
@@ -53,7 +124,7 @@ Output:
 Asthma (disorder)
 `
 
-"Asthma (disorder)" is the default term for this concept, contained in the defaultTerm property.
+"Asthma (disorder)" is the default term for this concept, contained in the defaultTerm property. The default term may be either the FSN or the preferred synonym, this a is a preference configuration for each language loaded in the server.
 
 ### Count the Inferred children of the concept
 
