@@ -48,7 +48,7 @@ Searching for "heart attack":
 java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedExamples findByQuery "heart attack"
 ```
 
-This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response.  To see the raw JSON itself, consult the [../curl-examples.md](curl-examples.md "Curl Examples") file.
+This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response.  To see the raw JSON itself, consult the [Curl Examples](../../blob/master/curl-examples/curl-examples.md "Curl Examples") file.
 
 <div style="max-height: 400px; overflow-y: scroll>
 <pre>
