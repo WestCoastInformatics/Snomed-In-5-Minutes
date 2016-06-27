@@ -25,7 +25,7 @@ through Javascript, Curl, and Java (using Jersey).
 
 Java
 ----
-[Click for Java examples.](../blob/master/java-examples/java-examples.md "Java Examples")
+[Click for Java examples.](../master/java-examples/java-examples.md "Java Examples")
 
 
 
@@ -35,7 +35,7 @@ TBD
 
 Curl
 ----
-[Click for Curl examples.](../blob/master/curl-examples/curl-examples.md "Curl Examples")
+[Click for Curl examples.](../master/curl-examples/curl-examples.md "Curl Examples")
 
 Documentation
 -------------
