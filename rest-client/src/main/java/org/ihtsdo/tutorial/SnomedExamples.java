@@ -38,7 +38,6 @@ public class SnomedExamples {
       // findByQuery "heart attack"
       if (args[0].equals("findByQuery") && args.length == 2) {
         final MatchResults results = client.findByQuery(args[1]);
-        System.out.println("  results = " + results);
         for (final Match match : results.getMatches()) {
           System.out.println("    match = " + match);
         }
@@ -53,7 +52,6 @@ public class SnomedExamples {
       // findByDescriptionId 679406011
       else if (args[0].equals("findByDescriptionId") && args.length == 2) {
         final MatchResults results = client.findByDescriptionId(args[1]);
-        System.out.println("  results = " + results);
         for (final Match match : results.getMatches()) {
           System.out.println("    match = " + match);
         }
@@ -89,7 +87,6 @@ public class SnomedExamples {
       // findByQuery "heart" "procedure"
       else if (args[0].equals("findByQuery") && args.length == 3) {
         final MatchResults results = client.findByQuery(args[1], args[2]);
-        System.out.println("  results = " + results);
         for (final Match match : results.getMatches()) {
           System.out.println("    match = " + match);
         }

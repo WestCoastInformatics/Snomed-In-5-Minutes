@@ -50,31 +50,61 @@ java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedEx
 
 This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response.  To see the raw JSON itself, consult the [Curl Examples](../curl-examples/curl-examples.md "Curl Examples") file.
 
-<div style="max-height: 400px; overflow-y: scroll>
-<pre>
-  results = MatchResults [matches=[Match [term=Heart attack, conceptId=22298006, active=true, conceptActive=true, fsn=Myocardial infarction (disorder), module=900000000000207008, definitionStatus=Fully defined], Match [term=Fear of heart attack, conceptId=102931001, active=true, conceptActive=true, fsn=Fear of heart attack (finding), module=900000000000207008, definitionStatus=Primitive], Match [term=Fear of having a heart attack, conceptId=247818001, active=true, conceptActive=true, fsn=Fear of having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive], Match [term=Fear of heart attack (finding), conceptId=102931001, active=true, conceptActive=true, fsn=Fear of heart attack (finding), module=900000000000207008, definitionStatus=Primitive], Match [term=Anxiety about having a heart attack, conceptId=277834005, active=true, conceptActive=true, fsn=Anxiety about having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive], Match [term=Fear of having a heart attack (finding), conceptId=247818001, active=true, conceptActive=true, fsn=Fear of having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive], Match [term=Anxiety about having a heart attack (finding), conceptId=277834005, active=true, conceptActive=true, fsn=Anxiety about having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive], Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score, conceptId=438367009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive], Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischaemic attack risk score, conceptId=438367009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive], Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), conceptId=438367009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive], Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score, conceptId=713678009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive], Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischaemic attack, vascular disease, age 65-74 years, and sex category risk score, conceptId=713678009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive], Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), conceptId=713678009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]], details={total=13, returnLimit=100, skipTo=0}, filters={semTag={disorder=1, assessment scale=6, finding=6}, module={900000000000207008=13}, refsetId={900000000000497000=13, 900000000000498005=13}, lang={english=13}}]
+```
     match = Match [term=Heart attack, conceptId=22298006, active=true, conceptActive=true, fsn=Myocardial infarction (disorder), module=900000000000207008, definitionStatus=Fully defined]
     match = Match [term=Fear of heart attack, conceptId=102931001, active=true, conceptActive=true, fsn=Fear of heart attack (finding), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Fear of having a heart attack, conceptId=247818001, active=true, conceptActive=true, fsn=Fear of having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Fear of heart attack (finding), conceptId=102931001, active=true, conceptActive=true, fsn=Fear of heart attack (finding), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Anxiety about having a heart attack, conceptId=277834005, active=true, conceptActive=true, fsn=Anxiety about having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Fear of having a heart attack (finding), conceptId=247818001, active=true, conceptActive=true, fsn=Fear of having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Anxiety about having a heart attack (finding), conceptId=277834005, active=true, conceptActive=true, fsn=Anxiety about having a heart attack (finding), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score, conceptId=438367009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischaemic attack risk score, conceptId=438367009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), conceptId=438367009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, and previous stroke or transient ischemic attack risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score, conceptId=713678009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischaemic attack, vascular disease, age 65-74 years, and sex category risk score, conceptId=713678009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]
-    match = Match [term=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), conceptId=713678009, active=true, conceptActive=true, fsn=Congestive heart failure, hypertension, age 75 years or older, diabetes, previous stroke or transient ischemic attack, vascular disease, age 65-74 years, and sex category risk score (assessment scale), module=900000000000207008, definitionStatus=Primitive]
+...
     details = {total=13, returnLimit=100, skipTo=0}
     filters = {semTag={disorder=1, assessment scale=6, finding=6}, module={900000000000207008=13}, refsetId={900000000000497000=13, 900000000000498005=13}, lang={english=13}}
 
-</pre>
-</div>
+``` 
 
+### Searching by description id
 
+Searching for "679406011":
+```
+java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedExamples findByDescriptionId 679406011
+```
+
+This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response. 
+
+```
+    match = Match [term=Methylphenyltetrahydropyridine (substance), conceptId=285407008, active=true, conceptActive=true, fsn=Methylphenyltetrahydropyridine (substance), module=900000000000207008, definitionStatus=null]
+    details = {total=1, returnLimit=100, skipTo=0}
+    filters = {semTag={}, module={}, refsetId={}, lang={}}
+```
+
+### Searching by concept id
+
+Searching for "109152007":
+```
+java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedExamples findByConceptId 109152007
+```
+
+This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response. 
+
+```
+  concept = Concept [fsn=Bilirubin test kit (substance), getConceptId()=109152007, getDefaultTerm()=Bilirubin test kit (substance), getDefinitionStatus()=Primitive, getStatedDescendants()=0, getInferredDescendants()=0, isActive()=true, getEffectiveTime()=20020131, getModule()=900000000000207008, toString()=ConceptRef [conceptId=109152007, defaultTerm=Bilirubin test kit (substance), definitionStatus=Primitive, statedDescendants=0, inferredDescendants=0, active=true, effectiveTime=20020131, module=900000000000207008], getClass()=class org.ihtsdo.tutorial.rf2.Concept]
+    description = Description [descriptionId=173687013, conceptId=109152007, type=ConceptRef [conceptId=900000000000013009, defaultTerm=Synonym (core metadata concept), definitionStatus=Primitive, statedDescendants=0, inferredDescendants=0,
 ...
+```
 
-* Find/get a concept by a description SCTID (e.g. "679406011")
-* Find/get a concept by a concept SCTID (e.g. "109152007")
-* Find a concept by a string (e.g. "heart") but only in the Procedures semantic tag
+### Searching by query string with a semantic filter
+
+Searching for "heart" within "procedure":
+Searching for "109152007":
+```
+java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedExamples findByQuery "heart" "procedure"
+```
+
+This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response. 
+
+```
+    match = Match [term=CT of heart, conceptId=241547009, active=true, conceptActive=true, fsn=Computed tomography of heart (procedure), module=900000000000207008, definitionStatus=Fully defined]
+    match = Match [term=MRI of heart, conceptId=241620005, active=true, conceptActive=true, fsn=Magnetic resonance imaging of heart (procedure), module=900000000000207008, definitionStatus=Fully defined]
+...
+    details = {total=746, returnLimit=100, skipTo=0}
+    filters = {semTag={procedure=746}, module={900000000000207008=746}, refsetId={900000000000497000=746, 900000000000498005=746}, lang={english=746}}
+```
+
+
