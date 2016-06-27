@@ -105,8 +105,9 @@
 
   <!-- Sub-modules -->
   <modules>
-    <module>java-examples</module>
     <module>curl-examples</module>
+    <module>java-examples</module>
+    <module>javascript-examples</module>
     <module>model</module>
     <module>rest-client</module>
   </modules>

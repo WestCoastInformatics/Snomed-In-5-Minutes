@@ -8,6 +8,8 @@ Project Structure
 
 * top-level: aggregator for sub-modules (alphabetically):
   * curl-examples: examples with curl
+  * java-examples: examples with java
+  * javascript-examples: examples with javascript
   * model: JAXB-enabled classes for representing the RF2 domain model
   * rest-client: a Java client for the REST services
 
