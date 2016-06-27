@@ -40,26 +40,26 @@ public class SnomedClientTest {
   }
 
   /**
-   * Test default query search method.
+   * Test search for "heart attack"
    *
    * @throws Exception the exception
    */
   @Test
-  public void testDefaultSearchHeartAttack() throws Exception {
-    Logger.getLogger(getClass()).info("TEST testDefaultSearchHeartAttack");
+  public void testFind() throws Exception {
+    Logger.getLogger(getClass()).info("TEST testFind");
 
     // Perform a "heart attack" search
     final SnomedClientRest client = new SnomedClientRest();
-    final MatchResults results = client.getMatchesForQuery("heart attack");
-    Logger.getLogger(getClass()).info("  results = " + results);
+    final MatchResults results = client.findByQuery("heart attack");
+    System.out.println("  results = " + results);
     for (final Match match : results.getMatches()) {
-      Logger.getLogger(getClass()).info("    match = " + match);
+      System.out.println("    match = " + match);
     }
-    Logger.getLogger(getClass()).info("    details = " + results.getDetails());
-    Logger.getLogger(getClass()).info("    filters = " + results.getFilters());
+    System.out.println("    details = " + results.getDetails());
+    System.out.println("    filters = " + results.getFilters());
 
+    // Verify things about the results
     assertEquals(results.getDetails().get("total"), new Long(13));
-
     assertEquals(results.getMatches().get(0).getTerm(), "Heart attack");
     assertEquals(results.getMatches().get(0).getConceptId(), "22298006");
     assertTrue(results.getMatches().get(0).isActive());
@@ -86,95 +86,25 @@ public class SnomedClientTest {
   }
 
   /**
-   * Test default query search method.
+   * Test search by description id 679406011
    *
    * @throws Exception the exception
    */
   @Test
-  public void testSemSearchHeartProcedure() throws Exception {
-    Logger.getLogger(getClass()).info("TEST testSemSearchHeartProcedure");
+  public void testFindByDescriptionId() throws Exception {
+    Logger.getLogger(getClass()).info("TEST testFindByDescriptionId");
 
-    // Perform a "heart attack" search
+    // Perform a "679406011" description id search
     final SnomedClientRest client = new SnomedClientRest();
-    final MatchResults results =
-        client.getMatchesForQuery("heart", "procedure");
-    Logger.getLogger(getClass()).info("  results = " + results);
+    final MatchResults results = client.findByDescriptionId("679406011");
+    System.out.println("  results = " + results);
     for (final Match match : results.getMatches()) {
-      Logger.getLogger(getClass()).info("    match = " + match);
+      System.out.println("    match = " + match);
     }
-    Logger.getLogger(getClass()).info("    details = " + results.getDetails());
-    Logger.getLogger(getClass()).info("    filters = " + results.getFilters());
-    assertEquals(results.getDetails().get("total"), new Long(746));
+    System.out.println("    details = " + results.getDetails());
+    System.out.println("    filters = " + results.getFilters());
 
-  }
-
-  /**
-   * Test full query search method.
-   *
-   * @throws Exception the exception
-   */
-  @Test
-  public void testFullSearchHeartAttack() throws Exception {
-    Logger.getLogger(getClass()).info("TEST testFullSearchHeartAttack");
-
-    // Perform a "heart attack" search
-    final SnomedClientRest client = new SnomedClientRest();
-    final MatchResults results =
-        client.getMatchesForQuery("heart attack", 50L, "partialMatching",
-            "english", "activeOnly", 0L, 100L, true, null);
-    Logger.getLogger(getClass()).info("  results = " + results);
-    for (final Match match : results.getMatches()) {
-      Logger.getLogger(getClass()).info("    match = " + match);
-    }
-    Logger.getLogger(getClass()).info("    details = " + results.getDetails());
-    Logger.getLogger(getClass()).info("    filters = " + results.getFilters());
-
-    assertEquals(results.getDetails().get("total"), new Long(13));
-
-    assertEquals(results.getMatches().get(0).getTerm(), "Heart attack");
-    assertEquals(results.getMatches().get(0).getConceptId(), "22298006");
-    assertTrue(results.getMatches().get(0).isActive());
-    assertTrue(results.getMatches().get(0).isConceptActive());
-    assertEquals(results.getMatches().get(0).getFsn(),
-        "Myocardial infarction (disorder)");
-    assertEquals(results.getMatches().get(0).getModule(), "900000000000207008");
-    assertEquals(results.getMatches().get(0).getDefinitionStatus(),
-        "Fully defined");
-
-    assertEquals(results.getDetails().get("total"), new Long(13));
-    assertEquals(results.getDetails().get("skipTo"), new Long(0));
-    assertEquals(results.getDetails().get("returnLimit"), new Long(100));
-
-    assertEquals(results.getFilters().get("lang").get("english"), new Long(13));
-    assertEquals(results.getFilters().get("semTag").get("disorder"),
-        new Long(1));
-    assertEquals(results.getFilters().get("semTag").get("finding"), new Long(6));
-    assertEquals(results.getFilters().get("semTag").get("assessment scale"),
-        new Long(6));
-    assertEquals(results.getFilters().get("module").get("900000000000207008"),
-        new Long(13));
-
-  }
-
-  /**
-   * Test default query search method.
-   *
-   * @throws Exception the exception
-   */
-  @Test
-  public void testSearchForDescription() throws Exception {
-    Logger.getLogger(getClass()).info("TEST testSearchForDescription");
-
-    // Perform a "heart attack" search
-    final SnomedClientRest client = new SnomedClientRest();
-    final MatchResults results = client.getMatchesForDescriptionId("679406011");
-    Logger.getLogger(getClass()).info("  results = " + results);
-    for (final Match match : results.getMatches()) {
-      Logger.getLogger(getClass()).info("    match = " + match);
-    }
-    Logger.getLogger(getClass()).info("    details = " + results.getDetails());
-    Logger.getLogger(getClass()).info("    filters = " + results.getFilters());
-
+    // Verify things about the results
     assertEquals(results.getDetails().get("total"), new Long(1));
 
     assertEquals(results.getMatches().get(0).getTerm(),
@@ -198,31 +128,33 @@ public class SnomedClientTest {
   }
 
   /**
-   * Test concept for id.
+   * Test search by concept id.
    *
    * @throws Exception the exception
    */
   @Test
-  public void testConceptForId() throws Exception {
-    Logger.getLogger(getClass()).info("TEST testConceptForId");
-    final SnomedClientRest client = new SnomedClientRest();
-    final Concept concept = client.getConceptForId("109152007");
-    Logger.getLogger(getClass()).info("  concept = " + concept);
-    for (final Description desc : concept.getDescriptions()) {
-      Logger.getLogger(getClass()).info("    description = " + desc);
-      for (final Language lang : desc.getLangMemberships()) {
-        Logger.getLogger(getClass()).info("      language = " + lang);
+  public void testFindByConceptId() throws Exception {
+    Logger.getLogger(getClass()).info("TEST testFindByConceptId");
 
+    // Perform a "109152007" concept id search
+    final SnomedClientRest client = new SnomedClientRest();
+    final Concept concept = client.findByConceptId("109152007");
+    System.out.println("  concept = " + concept);
+    for (final Description desc : concept.getDescriptions()) {
+      System.out.println("    description = " + desc);
+      for (final Language lang : desc.getLangMemberships()) {
+        System.out.println("      language = " + lang);
       }
     }
     for (final Relationship rel : concept.getRelationships()) {
-      Logger.getLogger(getClass()).info("    relationship = " + rel);
+      System.out.println("    relationship = " + rel);
     }
     for (final Membership member : concept.getMemberships()) {
-      Logger.getLogger(getClass()).info("    membership = " + member);
+      System.out.println("    membership = " + member);
     }
 
-    assertEquals(concept.get_id(), "56c42c077df006c561020b29");
+    // Verify things about the results
+    assertEquals(concept.get_id(), "576d5659c2097f9d35e1266a");
     assertEquals(concept.getConceptId(), "109152007");
     assertEquals(concept.getDefaultTerm(), "Bilirubin test kit (substance)");
     assertTrue(concept.isLeafInferred());
@@ -241,6 +173,30 @@ public class SnomedClientTest {
     assertEquals(concept.getRelationships().size(), 3);
     assertEquals(concept.getSemtag(), "substance");
     assertEquals(concept.getStatedRelationships().size(), 1);
+
+  }
+
+  /**
+   * Test search within semantic category "procedure"
+   *
+   * @throws Exception the exception
+   */
+  @Test
+  public void testFindWithinProcedure() throws Exception {
+    Logger.getLogger(getClass()).info("TEST testFindWithinProcedure");
+
+    // Perform a "heart" search within "procedure"
+    final SnomedClientRest client = new SnomedClientRest();
+    final MatchResults results = client.findByQuery("heart", "procedure");
+    System.out.println("  results = " + results);
+    for (final Match match : results.getMatches()) {
+      System.out.println("    match = " + match);
+    }
+    System.out.println("    details = " + results.getDetails());
+    System.out.println("    filters = " + results.getFilters());
+
+    // Assert things about the result
+    assertEquals(results.getDetails().get("total"), new Long(746));
 
   }
 

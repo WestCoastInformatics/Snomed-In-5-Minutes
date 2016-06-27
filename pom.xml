@@ -95,12 +95,18 @@
           </configuration>
         </plugin>
 
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.5.3</version>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
 
   <!-- Sub-modules -->
   <modules>
+    <module>java-examples</module>
+    <module>curl-examples</module>
     <module>model</module>
     <module>rest-client</module>
   </modules>

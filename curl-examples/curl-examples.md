@@ -35,9 +35,9 @@ The following examples can be types into the command line of any terminal that h
 
 Searching for "heart attack":
 
-```
+`
 curl --silent "http://browser.ihtsdotools.org/api/snomed/en-edition/v20160131/descriptions?query=heart%20attack&limit=50&searchMode=partialMatching&lang=english&statusFilter=activeOnly&skipTo=0&returnLimit=100&normalize=true" | python -c "import json,sys;obj=json.load(sys.stdin);print obj['details']['total'];"
-```
+`
 
 This command will obtain a json response from the server, parse it, and display the property "total" in the "details", this represents the number of descriptions that match with our search query.
 

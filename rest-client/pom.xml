@@ -30,5 +30,27 @@
     </dependency>
   </dependencies>
 
+  <build>
+    <plugins>
+      <!-- Make executable jar -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <finalName>snomed-in-5-minutes</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptor>src/main/assembly/assembly.xml</descriptor>
+        </configuration>
+        <executions>
+          <execution>
+            <id>create-archive</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 

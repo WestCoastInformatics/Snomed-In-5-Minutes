@@ -18,8 +18,8 @@ import org.ihtsdo.tutorial.rf2.MatchResults;
 import org.ihtsdo.tutorial.util.Utility;
 
 /**
- * A client for connecting to a SNOMED REST service.
- * NOTE: the URL parameters are hardcoded here.
+ * A client for connecting to a SNOMED REST service. NOTE: the URL parameters
+ * are hardcoded here.
  */
 public class SnomedClientRest {
 
@@ -49,15 +49,15 @@ public class SnomedClientRest {
   }
 
   /**
-   * Returns the matches for query.
+   * Returns description matches for the specified query.
    *
    * @param query the query
    * @return the matches for query
    * @throws Exception the exception
    */
-  public MatchResults getMatchesForQuery(String query) throws Exception {
+  public MatchResults findByQuery(String query) throws Exception {
     Logger.getLogger(getClass()).debug(
-        "Snomed Client - get matches for query " + query);
+        "Snomed Client - get description matches by query " + query);
 
     validateNotEmpty(query, "query");
 
@@ -84,7 +84,7 @@ public class SnomedClientRest {
   }
 
   /**
-   * Returns the matches for query.
+   * Returns description matches for the specified parameters.
    *
    * @param query the query
    * @param limit the limit
@@ -98,12 +98,11 @@ public class SnomedClientRest {
    * @return the matches for query
    * @throws Exception the exception
    */
-  public MatchResults getMatchesForQuery(String query, Long limit,
-    String searchMode, String lang, String statusFilter, Long skipTo,
-    Long returnLimit, Boolean normalize, String semanticFilter)
-    throws Exception {
+  public MatchResults findByQuery(String query, Long limit, String searchMode,
+    String lang, String statusFilter, Long skipTo, Long returnLimit,
+    Boolean normalize, String semanticFilter) throws Exception {
     Logger.getLogger(getClass()).debug(
-        "Snomed Client - get matches for query " + query);
+        "Snomed Client - get description matches by query " + query);
 
     validateNotEmpty(query, "query");
 
@@ -144,16 +143,17 @@ public class SnomedClientRest {
   }
 
   /**
-   * Returns the matches for description id.
+   * Returns description matches for the specified description id.
    *
    * @param descriptionId the description id
    * @return the matches for description id
    * @throws Exception the exception
    */
-  public MatchResults getMatchesForDescriptionId(String descriptionId)
+  public MatchResults findByDescriptionId(String descriptionId)
     throws Exception {
     Logger.getLogger(getClass()).debug(
-        "Snomed Client - get matches for description id " + descriptionId);
+        "Snomed Client - find description matches by description id "
+            + descriptionId);
 
     validateNotEmpty(descriptionId, "descriptionId");
 
@@ -173,15 +173,15 @@ public class SnomedClientRest {
   }
 
   /**
-   * Returns the concept for id.
+   * Returns the concept for the specified concept id.
    *
    * @param conceptId the concept id
    * @return the concept for id
    * @throws Exception the exception
    */
-  public Concept getConceptForId(String conceptId) throws Exception {
+  public Concept findByConceptId(String conceptId) throws Exception {
     Logger.getLogger(getClass()).debug(
-        "Snomed Client - get concept for id " + conceptId);
+        "Snomed Client - find concept by concept id " + conceptId);
 
     validateNotEmpty(conceptId, "conceptId");
 
@@ -239,10 +239,10 @@ public class SnomedClientRest {
    * @return the matches for query
    * @throws Exception the exception
    */
-  public MatchResults getMatchesForQuery(String query, String semanticFilter)
+  public MatchResults findByQuery(String query, String semanticFilter)
     throws Exception {
     Logger.getLogger(getClass()).debug(
-        "Snomed Client - get matches for query and filter " + query + ", "
+        "Snomed Client - find description matches for query and filter " + query + ", "
             + semanticFilter);
 
     validateNotEmpty(query, "query");
