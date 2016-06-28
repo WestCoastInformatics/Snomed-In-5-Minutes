@@ -27,11 +27,9 @@ Java
 ----
 [Click for Java examples.](../master/java-examples/java-examples.md "Java Examples")
 
-
-
 Javascript
 ----------
-TBD
+[Click for JavaScript examples.](../master/javascript-examples/javascript-examples.md "JavaScript Examples")
 
 Curl
 ----
