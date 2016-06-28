@@ -3,9 +3,12 @@ JavaScript Tutorial
 
 This tutorial focuses in using JavaScript with a basic sigle-page HTML application to access SNOMED CT content from the IHTSDO Browser backend services.
 
-Simply open the [index.html](index.html) page to run the app.
+To access the application, clone the repository and open the javascript-examples/index.html page in a browser.
 
-Each call made will show the underlying URL and the JSON response.
+```
+git clone https://github.com/WestCoastInformatics/Snomed-In-5-Minutes.git
+cd Snomed-In-5-Minutes
+```
 
-To see how the javascript is called, see [app.js](app.js)
+Then launch a browser pointing to the index.html file in that directory.
 
