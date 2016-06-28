@@ -41,7 +41,7 @@ An application entry point class with a main method was created as
 
 With the rest-client/target/snomed-in-5-minutes.jar file in the classpath, a simple java command can be used to test the sample calls described in this project.  All sample java calls should be made from the top-level directory after completing the prerequisites section above.
 
-### Searching by query string
+### Searching by query
 
 Searching for "heart attack":
 ```
@@ -94,7 +94,7 @@ This call writes some output to the console based on the domain model object unm
 Searching for "heart" within "procedure":
 Searching for "109152007":
 ```
-java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedExamples findByQuery "heart" "procedure"
+java -cp rest-client/target/snomed-in-5-minutes.jar org.ihtsdo.tutorial.SnomedExamples findByQueryWithFilter "heart" "procedure"
 ```
 
 This call writes some output to the console based on the domain model object unmarshalled from the server's JSON response. 

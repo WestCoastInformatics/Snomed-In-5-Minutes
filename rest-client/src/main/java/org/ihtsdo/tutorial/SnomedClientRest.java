@@ -239,7 +239,7 @@ public class SnomedClientRest {
    * @return the matches for query
    * @throws Exception the exception
    */
-  public MatchResults findByQuery(String query, String semanticFilter)
+  public MatchResults findByQueryWithFilter(String query, String semanticFilter)
     throws Exception {
     Logger.getLogger(getClass()).debug(
         "Snomed Client - find description matches for query and filter " + query + ", "

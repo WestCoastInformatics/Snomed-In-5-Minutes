@@ -182,12 +182,13 @@ public class SnomedClientTest {
    * @throws Exception the exception
    */
   @Test
-  public void testFindWithinProcedure() throws Exception {
-    Logger.getLogger(getClass()).info("TEST testFindWithinProcedure");
+  public void testFindByQueryWithFilter() throws Exception {
+    Logger.getLogger(getClass()).info("TEST testFindByQueryWithFilter");
 
     // Perform a "heart" search within "procedure"
     final SnomedClientRest client = new SnomedClientRest();
-    final MatchResults results = client.findByQuery("heart", "procedure");
+    final MatchResults results =
+        client.findByQueryWithFilter("heart", "procedure");
     System.out.println("  results = " + results);
     for (final Match match : results.getMatches()) {
       System.out.println("    match = " + match);

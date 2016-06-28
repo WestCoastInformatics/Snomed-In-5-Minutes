@@ -84,9 +84,9 @@ public class SnomedExamples {
       // semantic tag
       // java -cp rest-client/target/snomed-in-5-minutes.jar
       // org.ihtsdo.tutorial.SnomedExamples
-      // findByQuery "heart" "procedure"
-      else if (args[0].equals("findByQuery") && args.length == 3) {
-        final MatchResults results = client.findByQuery(args[1], args[2]);
+      // findByQueryWithFilter "heart" "procedure"
+      else if (args[0].equals("findByQueryWithFilter") && args.length == 3) {
+        final MatchResults results = client.findByQueryWithFilter(args[1], args[2]);
         for (final Match match : results.getMatches()) {
           System.out.println("    match = " + match);
         }
