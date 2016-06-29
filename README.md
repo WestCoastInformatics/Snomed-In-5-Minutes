@@ -25,9 +25,9 @@ through Javascript, Curl, and Java (using Jersey).
 
 All of the examples use a hard coded URL, edition name, and version number which point to a server hosted by IHTSDO (www.ihtsdo.org).  These are the APIs that back the IHTSDO browser (http://browser.ihtsdotools.org)
 
-baseUrl = http://browser.ihtsdotools.org/api/snomed/
-edition = en-edition
-version = 20160131
+* baseUrl = http://browser.ihtsdotools.org/api/snomed/
+* edition = en-edition
+* version = 20160131
 
 
 Java
