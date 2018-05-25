@@ -1,4 +1,4 @@
-SNOMED in 5 Minutes
+Deprecated - please use https://github.com/IHTSDO/SNOMED-in-5-minutes
 ===================
 
 This is an easy-to-use tutorial for accessing SNOMED APIs within 5 min.
